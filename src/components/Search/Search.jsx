@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Search.module.css";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
-import useAutocomplete from "@mui/base/useAutocomplete";
+import {useAutocomplete} from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 // import { truncate } from "../../helpers/helpers";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
@@ -51,11 +51,11 @@ function Search({ searchData, placeholder }) {
     getOptionLabel: (option) => option.title,
   });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const onSubmit = (e, value) => {
     e.preventDefault();
     console.log(value);
-    navigate(`/album/${value.slug}`);
+    // navigate(`/album/${value.slug}`);
     //Process form data, call API, set state etc.
   };
 
@@ -100,7 +100,7 @@ function Search({ searchData, placeholder }) {
                   <p className={styles.albumTitle}>{option.title}</p>
 
                   <p className={styles.albumArtists}>
-                    {truncate(artists.join(", "), 40)}
+                    {/* {truncate(artists.join(", "), 40)} */}
                   </p>
                 </div>
               </li>
