@@ -24,9 +24,9 @@ function Section() {
  
 
   // Function to toggle the collapse state
-  const handleToggle = () => {
-    setOpen(prevOpen => !prevOpen);
-  };
+  // const handleToggle = () => {
+  //   setOpen(prevOpen => !prevOpen);
+  // };
 
   const fetchTopSongs = async ()=>{
     const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top")
@@ -38,7 +38,7 @@ function Section() {
     <div className={styles.body}>
       <div className={styles.header}>
       <h3>Top Albums</h3>
-      <Button className={styles.collapse} onClick={handleToggle}>
+      <Button className={styles.collapse} onClick={()=>setOpen(!open)}>
           {open ? 'Collapse' : 'Show All'}
         </Button>
       </div>
@@ -57,6 +57,13 @@ function Section() {
           </Grid>
           </Grid>
           </Collapse>
+
+          {!open && (
+        <Box p={2} bgcolor="grey.100">
+          This content is shown when the collapse is closed.
+        </Box>
+      )}
+
       </Box>
    
     </div>
