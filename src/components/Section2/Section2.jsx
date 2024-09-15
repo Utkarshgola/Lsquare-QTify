@@ -1,6 +1,6 @@
 import React from 'react'
 import Songcard from '../Card/Songcard'
-import styles from './Section.module.css'
+import styles from './Section2.module.css'
 import { Button, Collapse } from '@mui/material'
 import axios from 'axios'
 import { useState,useEffect} from 'react'
@@ -14,12 +14,12 @@ import leftArrow from '../../assets/leftArrow.svg';
 import rightArrow from '../..//assets/rightArrow.svg';
 
 
-function Section() {
-  const [topSongs,setTopSongs] =useState([]);
+function Section2() {
+  const [newSongs,setNewSongs] =useState([]);
   const [open, setOpen] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      const TopSongslist = await fetchTopSongs();
+      const NewSongslist = await fetchNewSongs();
     };
 
     fetchData();
@@ -32,16 +32,16 @@ function Section() {
   //   setOpen(prevOpen => !prevOpen);
   // };
 
-  const fetchTopSongs = async ()=>{
-    const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top")
+  const fetchNewSongs = async ()=>{
+    const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new")
     console.log(response.data);
-    setTopSongs(response.data);
+    setNewSongs(response.data);
   }
   return (
     
     <div className={styles.body}>
       <div className={styles.header}>
-      <h3>Top Albums</h3>
+      <h3>New Albums</h3>
       <Button className={styles.collapse} onClick={()=>setOpen(!open)}>
           {open ? 'Show All' : 'Collapse'}
         </Button>
@@ -52,7 +52,7 @@ function Section() {
       <Grid container  sx={{ p: 5 }}>
           <Grid item xs={12} >
             <Grid container spacing={2} sx={{display:'flex',justifyContent:'space-between',}}>
-              {topSongs.map((song) => (
+              {newSongs.map((song) => (
                 <Grid item xs={6} md={4} key={song.id}>
                   <Songcard song={song}/>
                 </Grid>
@@ -110,7 +110,7 @@ function Section() {
         
       >
         
-        {topSongs.map((song) => (
+        {newSongs.map((song) => (
                 <SwiperSlide>
                     <Grid item xs={6} md={4} key={song.id} sx={{m:5}}>
                       <Songcard song={song}/>
@@ -130,4 +130,4 @@ function Section() {
   )
 }
 
-export default Section
+export default Section2
