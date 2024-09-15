@@ -1,0 +1,29 @@
+.body{
+    background-color: black;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    
+    font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 30px;
+text-align: right;
+color: white;
+margin: 0px 20px 0px 20px;
+
+}
+
+.collapse{
+    color: #34C94B !important ;
+    font-family: Poppins,sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 30px !important;
+    text-align: right !important;
+}
