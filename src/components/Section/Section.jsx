@@ -43,11 +43,11 @@ function Section() {
         </Button>
       </div>
         
-      <Box className="gridBox" sx={{ flexGrow: 1 }}>
+      <Box className="gridBox" sx={{ flexGrow: 1,  }}>
       <Collapse in={open}>
-      <Grid container  sx={{ p: 2 }}>
+      <Grid container  sx={{ p: 5 }}>
           <Grid item xs={12} >
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{display:'flex',justifyContent:'space-between',}}>
               {topSongs.map((song) => (
                 <Grid item xs={6} md={4} key={song.id}>
                   <Songcard song={song}/>
