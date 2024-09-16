@@ -1,0 +1,123 @@
+ {!songsSection ? ( open && (        //creating diff carousels for top albums and songs
+            <>
+         <div className={styles.swiperContainer}>
+            <div className={styles['prevCustomButton']}>
+                    <img src={leftArrow} alt="Previous" />
+                  </div>
+                  <div className={styles['nextCustomButton']} >
+                    <img src={rightArrow} alt="Next" />
+            </div>
+          </div>
+
+        <Swiper
+        spacing={5}
+        slidesPerView={7}
+        spaceBetween={50}
+        breakpoints={{
+          10: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+
+          540: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 7,
+            spaceBetween: 50,
+          },
+        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        navigation={{
+          clickable: true,
+          prevEl: `.${styles['prevCustomButton']}`,
+          nextEl: `.${styles['nextCustomButton']}`,
+          
+      }}
+        modules={[Pagination,Navigation]}
+        className="mySwiper"
+        
+      >
+        
+        {topSongs.map((song) => (
+                <SwiperSlide>
+                    <Grid item xs={6} md={4} key={song.id} sx={{m:5}}>
+                      <Songcard song={song}/>
+                    </Grid>
+                </SwiperSlide>
+              ))}
+               
+          
+      </Swiper>
+    </>
+        
+      )
+):
+ (
+  <>
+<div className={styles.swiperContainer}>
+  <div className={styles['prevCustomButton']}>
+          <img src={leftArrow} alt="Previous" />
+        </div>
+        <div className={styles['nextCustomButton']} >
+          <img src={rightArrow} alt="Next" />
+  </div>
+</div>
+
+<Swiper
+spacing={5}
+slidesPerView={7}
+spaceBetween={50}
+breakpoints={{
+10: {
+  slidesPerView: 1,
+  spaceBetween: 20,
+},
+
+540: {
+  slidesPerView: 4,
+  spaceBetween: 20,
+},
+768: {
+  slidesPerView: 5,
+  spaceBetween: 40,
+},
+1024: {
+  slidesPerView: 7,
+  spaceBetween: 50,
+},
+}}
+// pagination={{
+//   clickable: true,
+// }}
+navigation={{
+clickable: true,
+prevEl: `.${styles['prevCustomButton']}`,
+nextEl: `.${styles['nextCustomButton']}`,
+
+}}
+modules={[Pagination,Navigation]}
+className="mySwiper"
+
+>
+
+{topSongs.map((song) => (
+      <SwiperSlide>
+          <Grid item xs={6} md={4} key={song.id} sx={{m:5}}>
+            <Songcard song={song}/>
+          </Grid>
+      </SwiperSlide>
+    ))}
+     
+
+</Swiper>
+</>
+
+)}

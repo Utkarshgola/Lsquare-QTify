@@ -9,7 +9,7 @@ import Chip from '@mui/material/Chip';
 import styles from './Songcard.module.css'
 import { Grid2 } from '@mui/material';
 
-function Songcard({song}) {
+function Songcard({song, songsSection}) {
   return (
     <Card sx={{ width: '159px',height:'232px', backgroundColor:'black'}}>
       <div className={styles.uppercard}>
@@ -18,7 +18,12 @@ function Songcard({song}) {
         </div>
        
          <div className={styles.chip}>
-         <Chip label={`${song.follows} Follows`} variant="outlined" sx={{backgroundColor:'black', color:'white',ml:'8px',}} />
+          {songsSection ? (
+            <Chip label={`${song.likes} Likes`} variant="outlined" sx={{backgroundColor:'black', color:'white',ml:'8px',}} />
+          ):(
+            <Chip label={`${song.follows} Follows`} variant="outlined" sx={{backgroundColor:'black', color:'white',ml:'8px',}} />
+          )}
+         
          </div> 
       </div>
 

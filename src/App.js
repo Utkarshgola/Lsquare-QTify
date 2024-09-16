@@ -15,6 +15,7 @@ function App() {
     <Hero />
     <Section />
     <Section2 />
+    <Section songsSection={true}/>
     
     
     
