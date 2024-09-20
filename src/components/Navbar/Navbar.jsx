@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import styles from "./Navbar.module.css";
+import LogoImage from "../../assets/logo.png";
 
 function Navbar({ searchData }) {
   return (
@@ -12,7 +13,12 @@ function Navbar({ searchData }) {
       {/* <Link to="/">
         <Logo />
       </Link> */}
-      <Logo />
+      
+      {/* <Logo /> */}
+
+
+
+     <div className="styles.logoDiv"> <img src={LogoImage} alt="logo" width={67}/></div>
       <Search
         placeholder="Search a song of your choice"
         searchData={searchData}
