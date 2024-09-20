@@ -70,7 +70,7 @@ function Section({songsSection}) {
     <div className={styles.body}>
       <div className={styles.header}>
         {songsSection ? //showing songs instead of top albums
-        (<h3>Songs</h3>):(<h3>Top Albums</h3>)} 
+        (<h3 >Songs</h3>):(<h3>Top Albums</h3>)} 
       
 
       {!songsSection && (    //hiding showall button for songs dection
@@ -241,7 +241,9 @@ function Section({songsSection}) {
   
   }}
   modules={[Pagination,Navigation]}
-  className="mySwiper"
+  className={styles.swiper}
+ 
+
   
   >
   
