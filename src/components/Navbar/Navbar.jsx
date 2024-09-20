@@ -17,7 +17,6 @@ function Navbar({ searchData }) {
       {/* <Logo /> */}
 
 
-
      <div className="styles.logoDiv"> <img src={LogoImage} alt="logo" width={67}/></div>
       <Search
         placeholder="Search a song of your choice"
